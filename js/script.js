@@ -1,4 +1,4 @@
-var time = 6;
+var time = 5;
 var timer = setInterval(function(){
     time--;
     if(time <= 0){
@@ -8,7 +8,7 @@ var timer = setInterval(function(){
     }
     document.querySelector(".time_h1").innerHTML = time;
     document.querySelector(".time_h3").innerHTML = time;
-    if(time > 2){
+    if(time > 0){
         document.title = "跳转倒计时：" + time + "秒";
     }
     if(time < 2){
