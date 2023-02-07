@@ -1,0 +1,40 @@
+/* 使用prefer color scheme判断系统是否处于深色模式 */
+@media (prefers-color-scheme: dark){
+    /* 设置背景 */
+    body{
+        background-color: #222222;
+    }
+    h2{
+        color: #FFFFFF;
+        font-size: 50px;
+    }
+    h3{
+        color:#FFFFFF;
+        font-size: 25px;
+    }
+}
+ @media (prefers-color-scheme: light){
+    body{
+        background-color: #DDDDDD;
+    }
+img{
+
+position: relative;
+
+max-height: 100%;
+
+max-width: 100%;
+
+width: auto;
+
+height: auto;
+
+top: 50%;
+
+left: 50%;
+
+-webkit-transform: translateX(-50%) translateY(-50%);
+
+transform: translateX(-50%) translateY(-50%);
+
+}
