@@ -1,49 +1,126 @@
-<!DOCTYPE html>
 <html>
 
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<link rel="icon" href="https://my-img.cc/i/2023/02/05/63dfb0ae65325.ico">
-    <title>LOADING</title>
-    <link rel="stylesheet" href="css/jiazai.css">
-</head>
+    <title>550A</title>
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+            font-family: monospace;
+            font-size: 16px;
+            text-align: center;
+            padding-top: 10%;
+        }
 
+        .progress {
+            width: 300px;
+            height: 20px;
+            border: 1px solid #000;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .progress-bar {
+            width: 0;
+            height: 100%;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: width 0.2s ease-in;
+        }
+    </style>
+</head>
+<body>  
+    <div class="screen"></div>
+    <div class="code">
+        <span id="code">正在加载BIOS...</span>
+    </div>
+    <script>
+        let code = document.querySelector("#code");
+        let codeList = ["正在加载系统内核...", "正在加载系统驱动...", "正在加载系统程序...", "550A量子计算机启动完成.","即将进入系统..."];
+        let time = 0;
+
+        let timer = setInterval(() => {
+            code.innerHTML = codeList[time];
+            time++;
+            if (time === 4) {
+                clearInterval(timer);
+            }
+        }, 1000);
+    </script>
+</body>
 <body>
-    <div class="loader-wrapper">
-        <div class="loader"></div>
-        <div class="loader-text">
-            <!-- 10个div -->
-            <div>配</div>
-            <div>置</div>
-            <div>5</div>
-            <div>5</div>
-            <div>0</div>
-            <div>a</div>
-            <div></div>
-            <div></div>
-			<div></div>
-            <div></div>
-        </div>
+    <h1>550A量子计算机</h1>
+    <div class="progress">
+        <div class="progress-bar"></div>
+    </div>
+    <p>正在启动系统...</p>
+    <script>
+        let progressBar = document.querySelector('.progress-bar');
+        let width = 0;
+        let interval = setInterval(frame, 50);
+
+        function frame() {
+            if (width >= 100) {
+                clearInterval(interval);
+                window.location.href = 'go.html';
+            } else {
+                width++;
+                progressBar.style.width = width + '%';
+            }
+        }
+    </script>
+
+</body>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            background-color: black;
+            cursor: none;
+            animation: bgInOut 0.5s;
+            animation-delay: 10s;
+            animation-fill-mode: forwards;
+        }
+        div.logo img {
+            width: 70%;
+            height: auto;
+            position: absolute;
+            left: 14%;
+            top: 13%;
+            visibility: visible;
+            opacity: 0;
+            animation: logoInOut 7s;
+            animation-delay: 1.5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes logoInOut{
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1.0;
+            }
+            60%{
+                opacity: 1.0;
+            }
+            100%{
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+        @keyframes bgInOut{
+            from{
+                background-color: black;
+            }to{
+                 background-color: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
     </div>
 </body>
-    <script>
-        var time=3;
-        // 查找节点（标签）
-        var number=document.getElementsByClassName('number')[0];
-        var b=document.getElementsByClassName('b')[0];
-        
-        //利用定时器 
-        window.setInterval(function(){
-            // 判断描述是否为0，若为0,页面跳转
-            if(time==0){
-                location.href='go.html';
-            }
-            else{
-                --time;
-                number.innerText=time;
-                b.innerText=time;
-            }
-        },1000)
-	</script>
 </html>
